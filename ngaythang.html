@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="aaa">
+    <button type="button" onclick="go()">Tính số ngày</button>
+    <div id="bb"></div>
+    <script>
+        function go() {
+            let ngay = +document.getElementById("aaa").value;
+            console.log(ngay);
+            switch (ngay) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("bb").innerHTML = ("31 ngày" + ngay);
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById("bb").innerHTML = ("30 ngày" + ngay);
+                    break;
+                case 2:
+                    document.getElementById("bb").innerHTML = ("28 ngày , 29 ngày" + ngay);
+                    break;
+                default:
+                    
+                document.getElementById("bb").innerHTML = ("ko tim thay");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Nhập ba số nguyên :
+    <br>
+    Số nguyên a:
+    <input type="number" id="1" >
+    <br>
+    Số nguyên b:
+    <input type="number" id="2" >
+    <br>
+    Số nguyên c:
+    <input type="number" id="3" >
+<div id="lo"></div>
+
+<button type="button" onclick="go()">Số lớn nhất</button>
+<div id="lq"></div>
+<script>
+    function go(){
+        let a = +document.getElementById("1").value;
+        let b = +document.getElementById("2").value;
+        let c = +document.getElementById("3").value;
+        if ( a > b && a > c) {
+            alert("a số lớn nhất")
+            document.getElementById("lq").innerHTML=a;
+        }
+        else if ( b > a && b > c){
+           
+           document.getElementById("lq").innerHTML=b;
+        }
+        else if ( c > b && c > a){
+          
+           document.getElementById("lq").innerHTML=c;
+        }
+        else 
+        alert("sai")
+
+
+
+
+    }
+
+
+
+
+
+
+</script>
+  
+
+</body>
+</html>

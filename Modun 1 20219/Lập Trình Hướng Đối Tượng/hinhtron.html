@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1350" height="650" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+        function hinhTron(r,color){
+            this.r = r
+            this.color = color
+        this.dientichhinhtron = function(){
+            return this.r** Math.PI
+        }
+        this.chuvihinhtron = function(){
+            return 2 * Math.PI * this.r
+        }    
+        this.inramanHinh = function(){
+            document.write("dientichhinhtron la :  " + this.dientichhinhtron() + "<br>")
+            document.write("chu vi hinh tron : " + this.chuvihinhtron() + "<br>")
+
+        }
+        this.vehinhtron = function(){
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(605,200,this.r,0,2*Math.PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.stroke();
+
+        }
+}
+    let hinhtron = new hinhTron(50,"red")
+        // let r = parseInt(prompt("nhap ban kinh"));
+        // let color = prompt("nhap mau")
+        // let hinhtron =  new hinhTron(r,color)
+   
+    hinhtron.inramanHinh();
+    hinhtron.vehinhtron();
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <h1> Chuyển đổi từ độ F  sang độ C </h1> 
+   Fahrenheit:
+   <input type="number" value="nhập độ F" id="1" 
+            oninput="go(this.value)"
+            onchange="go(this.value)">
+            
+     Độ C :   <span id="2"></span>
+
+     <script>
+         function go(){
+             let f = document.getElementById("1").value;
+             let c = (f-32) / 1.8
+             document.getElementById("2").innerHTML=c;
+
+             
+         }
+
+     
+     
+     
+     
+     
+     
+     </script>
+
+
+
+
+
+    
+</body>
+</html>

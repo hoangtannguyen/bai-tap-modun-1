@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function chuyendo(_c){
+            this.c = _c;
+
+            this.chuyencsangf = function(){
+                return this.c * 1.8 + 32
+            }
+            this.chuyencsangkevin = function(){
+                return this.c + 273.15
+            }
+            this.inramanhinh = function(){
+                document.write("do f la : " + this.chuyencsangf());
+                document.write("do k la : " + this.chuyencsangkevin());
+
+            }
+        }
+        let chuyenDo = new chuyendo(20);
+        chuyenDo.inramanhinh()
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Diện tích hình chữ nhật : 
+    <br>
+    Công thức : S = A X B ( A chiều dài ) : (B chiều rộng )
+    <br>
+    A = 10 
+    <br>
+    B = 4
+    
+    <br>
+    <input type="number" placeholder="Nhập chiều dài" id="1">
+    <br>
+    <input type="number" placeholder="Nhập chiều rộng" id="2">
+    <br><br>
+    <input type="button" value="Kết quả" onclick="go()">
+    <div id="3"></div>
+    <script>
+        function go(){
+        let chieudai = document.getElementById("1").value;
+        let chieurong = document.getElementById("2").value;
+       
+        let kq = chieudai * chieurong
+        document.getElementById("3").innerHTML=kq;
+       }
+        
+        
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+</body>
+</html>

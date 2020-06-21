@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <input type="number" placeholder="Nhap tuoi di ban" id="1">
+   <br><br>
+   <input type="button" value="Ket qua" onclick="go()">
+   <div id="2"></div>
+   <script>
+       function go(){
+           let age = +document.getElementById("1").value;
+           if ( age < 120 && age > 0){
+               document.getElementById("2").innerHTML=age;
+               alert(" la so tuoi cua ban ")
+            }
+            if ( age > 120 ){
+                document.getElementById("2").innerHTML=age;
+               alert(" ko phai la so tuoi cua ban ")
+            }
+
+
+
+
+
+
+
+
+       }
+   
+   
+   
+   
+   
+   </script>
+</body>
+</html>

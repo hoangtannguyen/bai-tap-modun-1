@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập doanh số bán hàng:<br>
+    <input type="number" id="1">
+    <br>
+    <button type="button" onclick="go()"> HoaHong </button>
+    <div id="lo"></div>
+    <script>
+        function go() {
+            let a = document.getElementById("1").value;
+            let hh;
+            if (a > 0 && a < 1000000) {
+                hh = a + a*1.1;
+                document.getElementById("lo").innerHTML=hh;
+            }
+            else if ( a >= 1000000 && a < 2000000) {
+                hh = a + a*1.2;
+                document.getElementById("lo").innerHTML=hh;
+            }
+            else if ( a >= 2000000) {
+                hh = a + a * 1.4;
+                document.getElementById("lo").innerHTML=hh;
+            }
+            else
+            document.getElementById("1").innerHTML='nhập sai';
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

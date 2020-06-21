@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nguyento(number){
+            
+            if (number < 2){
+                return false
+            }
+            if (number === 2){
+                return true
+            }
+
+            for (let i = 2 ; i <number-1 ; i++){
+                if (number% i ===0 ){
+                    return false;
+                }
+            
+            }
+            return true;
+        }
+
+        let number = +prompt("nhập số nguyên tố muốn hiển thị");
+        let dem = 0;
+        let i=2;
+        while (dem < number){      
+            if (nguyento(i) === true){
+                document.write(i + "<br>")
+               dem++;
+            }
+            i++;
+             
+        }
+      
+    
+    
+    
+    
+    </script>
+</body>
+</html>

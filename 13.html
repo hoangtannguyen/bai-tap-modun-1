@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Nhập các tham số của phương trình ax + b = 0 :
+    <br><br>
+     <input type="number" placeholder=" a = " id="1">
+     <br><br>
+     <input type="number" placeholder=" b = " id="2">
+     <br><br>
+     <input type="button" value="Kết quả " onclick="go()">
+     <div id="3"></div>
+     <script>
+         function go(){
+             let a = document.getElementById("1").value;
+             let b = document.getElementById("2").value;
+             let kq = -b/a
+             document.getElementById("3").innerHTML=kq;
+            if ( a == 0 && b == 0 ){
+                 let kq1 = -b/a
+                document.getElementById("3").innerHTML=kq1;
+                alert("phương trình có vô số nghiệm")
+            }
+            if ( a == 0 && b > 0 ){
+                let kq2 = -b/a
+                document.getElementById("3").innerHTML=kq2;
+                alert(" phương trình vô nghiệm")
+            }
+            if ( a > 0 && b == 0){
+                let kq3 = -b/a
+                document.getElementById("3").innerHTML=kq3;
+                alert("phương trình có nghiệm duy nhất x = -b : a.")
+
+
+            }
+                
+           
+         }
+     
+     
+     
+     
+     
+     </script>
+
+</body>
+</html>

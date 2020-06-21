@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <form>
+      Nhập N:<br />
+      <input type="number" id="n" min="10" max="20" style="width: 200px;" /><br />
+      Nhập M <br />
+      <input type="number" id="m" min="10" max="20" style="width: 200px;"/><br /><br />
+      <input type="button" value="CreateMatrix" onclick="createMatrix()">
+      </form>
+      <div id="result1"></div>
+      <div id="result2"></div>
+      <label id="maxMatrix"></label>
+      <label id="minMatrix"></label>
+      <label id="oddMatrix"></label>
+      <label id="prime"></label>
+    <script>
+      function createMatrix() {
+        let arr = [];
+        let n = parseInt(document.getElementById("n").value);
+        let m = parseInt(document.getElementById("m").value);
+        let show =
+          "<table width='300' border='1' cellspacing='1' cellpadding='10'>";
+        for (let i = 0; i < m; i++) {
+          arr[i] = [];
+        }
+        for (let i = 0; i < m; i++) {
+          show += "<tr>";
+          for (let j = 0; j < n; j++) {
+            arr[i][j] = Math.floor(Math.random() * 191 + 10);
+            show += "<td>" + arr[i][j] + "</td>";
+          }
+          show += "</tr>";
+        }
+        show += "</table>";
+        document.getElementById("result1").innerHTML=show;
+        sortArrow(arr);
+        sortCol(arr,m,n);
+        maxMatrix(arr,m,n);
+        minMatrix(arr,m,n);
+        oddMatrix(arr,m,n);
+        countPrime(arr,m,n);
+      }
+      function sortArrow(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          arr[i].sort(function(a, b) {
+            return a - b;
+          });
+        }
+      }
+      function sortCol(arr,row,col) {
+        let newArr= new Array(col);
+        for(let i=0;i<row;i++){
+            newArr[i]=new Array(row);
+        }
+        for(let i=0 ; i<col ; i++){
+            for(let j=0 ; j<row ; j++){
+                newArr[i][j]=arr[j][i];
+            }
+        }
+        //sort
+        for(let i=0;i<col;i++){
+            newArr[i].sort(function(a,b){
+                return a-b;
+            });
+        }
+        //change & show
+        let show2="<table width='300' border='1' cellspacing='1' cellpadding='10'>";
+        for(let i=0 ; i<row ; i++){
+            show2+="<tr>";
+            for(let j=0 ; j<col ; j++){
+                arr[i][j]=newArr[j][i];
+                show2+="<td>"+arr[i][j]+"</td>";
+            }
+            show2+="</tr>";
+        }
+        document.getElementById("result2").innerHTML=show2;
+      }
+      // Số lớn nhất
+      function maxMatrix(arr,m,n){ 
+            let max = arr[0][0];
+            for(i=0 ; i < m ; i++){
+                for(j=0 ; j < n ; j++){
+                    if(arr[i][j] > max){
+                        max = arr[i][j];
+                    }
+                }
+            }
+            document.getElementById("maxMatrix").innerHTML ="Số lớn nhất: " + max + "<br/>";
+        }
+        function minMatrix(arr,m,n){ // Số nhỏ nhất
+            let min = arr[0][0];
+                for(i=0;i<m;i++){
+                    for(j=0;j<n;j++){
+                        if(arr[i][j] < min){
+                            min = arr[i][j];
+                        }
+                    }
+                }
+            document.getElementById("minMatrix").innerHTML ="Số nhỏ nhất: " + min + "<br/>";
+        }
+        function oddMatrix(arr,m,n){ //Đếm số lẻ
+            let odd = 0;
+            for(i=0;i<m;i++){
+                for(j=0;j<n;j++){
+                    if(arr[i][j] %2 != 0){
+                        odd ++;
+                    }
+                }
+            }
+            document.getElementById("oddMatrix").innerHTML ="Tổng số lẻ là: " + odd + "<br/>";
+        }
+        function isPrime(number){
+            let tmp=Math.floor(Math.sqrt(number)+1);
+            for(let i=2 ; i<tmp ; i++){
+                if(number%i==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function countPrime(arr,m,n) {
+          let count=0;
+          for(i=0;i<m;i++){
+                for(j=0;j<n;j++){
+                    if(isPrime(arr[i][j])){
+                        count ++;
+                    }
+                }
+            }
+            document.getElementById("prime").innerHTML ="Tổng số lượng số nguyên tố là: " + count + "<br/>";
+        }
+    </script>
+  </body>
+</html>

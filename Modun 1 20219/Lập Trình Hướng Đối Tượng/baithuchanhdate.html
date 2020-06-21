@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Date(_ngay,_thang,_nam){
+            this.ngay = _ngay;
+            this.thang = _thang;
+            this.nam = _nam;
+           
+
+            this.setDay = function(_ngay) {
+                this.ngay  = _ngay;
+            }
+            this.setMonth = function(_thang) {
+                this.thang = _thang;
+            }
+            this.setYear = function(_nam) {
+                this.nam  = _nam;
+            }
+
+            this.getDay = function() {
+                return this.ngay;
+            }
+            this.getMonth = function() {
+                return this.thang;
+            }
+            this.getYear = function() {
+                return this.nam;
+            }
+
+            this.inramanhinh =function(){
+                document.write("ngày: " + this.ngay);
+                document.write("tháng: " + this.thang)
+                document.write("năm: " + this.nam +"<br>")
+            }
+        }
+    
+    let ngay1 = new Date(12,5,2012);
+        ngay1.setDay(10);
+        ngay1.setMonth(4);
+        ngay1.setYear(2001);
+        ngay1.inramanhinh()
+    
+
+
+
+        
+
+    </script>
+</body>
+</html>

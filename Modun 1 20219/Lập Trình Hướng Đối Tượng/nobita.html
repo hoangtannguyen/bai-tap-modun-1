@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="nobita" src="http://images6.fanpop.com/image/photos/41400000/Levi-pureheroine-41479618-1000-1000.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+    <script>
+        function upArrowPressed() {
+    let element = document.getElementById("levi");
+    element.style.top = parseInt(element.style.top) - 5 + 'px';
+}
+        function downArrowPressed() {
+   let element = document.getElementById("levi");
+    element.style.top = parseInt(element.style.top) + 5 + 'px';
+}
+function leftArrowPressed() {
+    let element = document.getElementById("levi");
+    element.style.left = parseInt(element.style.left) - 5 + 'px';
+}
+function rightArrowPressed() {
+    let element = document.getElementById("levi");
+    element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+}
+function moveSelection(evt) {
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+        case 38:
+            upArrowPressed();
+            break;
+        case 40:
+            downArrowPressed();
+            break;
+    }
+}
+function docReady() {
+    window.addEventListener('keydown', moveSelection);
+}
+    <body onload="docReady()"> 
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

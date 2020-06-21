@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Row(arr,m) {
+        let sum = 0
+        let row =parseInt(prompt("nhập row"))
+            for (i=0; i < m ; i++){
+            sum +=arr[row][i];
+            
+            }
+            return sum
+        
+    }
+    function bientren(arr,m,n){
+        let sumtop = 0;
+        let sumduoi = 0;
+        let sumphai = 0;
+        let sumtrai = 0;
+
+        for (let i = 0 ; i<m ; i++){
+            sumtop += arr[0][0]  + arr[0][i];
+            sumduoi += arr[n-1][i] + arr[i];
+        for (let j = 0 ; j < n ; j++){
+            sumphai += arr[i][0]    
+            sumtrai +=arr[i][m-1];
+
+        }
+ }
+        function solon(row){
+            let solonnhat = row[i]
+            let index = 0;
+            for(let i = 0 ; i < row.length ; i++ ){
+                if ( row[i] > solonnhat){
+                    solonnhat = row[i]
+                    index = [i]
+                }
+            }
+            return `${solonnhat}+${index}`
+            
+        }
+        
+
+
+
+
+            function tinhboi(row){
+            
+            let dem = 0;
+            for(let i = 0 ; i <n ; i++){
+                for (let j = 0 ; j <m ;i++){
+                    if(arr[i][j]%5 === 0)
+                    dem++;
+                }
+            }
+                return dem;
+            
+        }
+        
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <table id="show"></table>
+    <script>
+        function matrix(col, row) {
+            let matrix = new Array(row);
+            for (let i = 0; i < row; i++) {
+                let arr = new Array(col);
+                for (let j = 0; j < col; j++) {
+                    arr[j] = Math.floor(Math.random() * 91 + 10);
+                }
+                matrix[i] = arr
+            }
+            return matrix;
+        }
+        function showMatrix(row, col, matrix) {
+            let a = "";
+            for (let i = 0; i < row; i++) {
+                a += "<tr>";
+                for (let j = 0; j < col; j++) {
+                    a += "<td>" + matrix[i][j] + "</td>";
+                }
+                a += "</tr>";
+            }
+            return a;
+        };
+        function main() {
+            let row = parseInt(prompt('row'));
+            let col = parseInt(prompt('col'));
+            let result = matrix(row, col);
+            document.getElementById("show").innerHTML = showMatrix(row, col, result);
+        }
+        main();
+      
+    </script>
+</body>
+</html>

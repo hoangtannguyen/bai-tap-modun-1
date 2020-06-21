@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   let giatri = prompt("nhap gia tri di ban");
+    //   let so = [1,2,3,4,5,6];
+    //   for ( let i = 0 ; i < so.length ; i++){
+    //       if (giatri == so[i]){
+    //           document.write("giá trị = : " + so[i] + "tại :" + i )
+    //       }
+    //   }
+       
+   
+    let so = [1,2,3,4,5,6,7,8,9];
+    let solonnhat = so[0];
+    let ccx = 0;
+    for( let i = 1 ; i < so.length ; i++){
+        if (so[i] > solonnhat){
+            solonnhat = so[i];
+            ccx = i
+        }
+
+    }
+    alert("so lon nhat = " + solonnhat + "tai " + ccx)
+
+    
+
+
+    </script>
+</body>
+</html>

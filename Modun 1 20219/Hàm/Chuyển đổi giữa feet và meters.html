@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chuyển đổi giữa feet và meters</h1>
+
+
+        Chuyển đổi từ feet sang meet :
+        <input type="number" placeholder="nhập f" id="1"
+            oninput="go(this.value)"
+            onchange="go(this.value)">
+    Meters:   <span id="2"></span>
+            
+
+
+   
+
+     <br>   
+        Chuyển đổi từ meet sang feet :    
+       <input type="number" placeholder="nhập c" id="3"
+        oninput="go2(this.value)"
+        onchange="go2(this.value)">   
+
+   Meters:        <span id="4"></span>
+
+   <script>
+
+       function go(){
+           let f = document.getElementById("1").value;
+           let m = 0.305 * f
+           
+           document.getElementById("2").innerHTML=m;
+
+
+
+
+       }
+   
+
+        function go2(){
+           let m = document.getElementById("3").value;
+           let f = 3.279 * m
+           document.getElementById("4").innerHTML=f;
+        }
+   
+   
+   
+   
+   
+   </script>
+
+
+
+
+    
+
+  
+ 
+  
+</body>
+</html>

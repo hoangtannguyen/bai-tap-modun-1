@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+        Trình duyệt của bạn không hỗ trợ thẻ canvas trong HTML5.
+        </canvas>
+    <script>
+        function hinhchuNhat(_chieudai,_chieurong,_color){
+            this.chieudai = _chieudai;
+            this.chieurong = _chieurong;
+            this.color = _color;
+            this.chunhat = function(){
+                return this.chieudai * this.chieurong
+            }
+            this.inramanhinh = function(){
+                document.write("hinh chu nhat la :  " + this.chunhat())
+            }
+            this.vehinhchunhat = function(){
+                let c = document.getElementById("myCanvas");
+                let ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.fillRect(0,0,this.chieudai,this.chieurong);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.stroke();
+
+            }
+
+            
+           
+
+        }
+        let hinhchunhat = new hinhchuNhat(100,60,"yellow");
+        hinhchunhat.inramanhinh();
+        hinhchunhat.vehinhchunhat()
+
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

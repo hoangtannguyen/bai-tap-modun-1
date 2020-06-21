@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+    <img name='flashlamp' src="vt-1.jpg" alt="" style="width: 300px;height: 200px;">
+    <hr>
+    <!-- onclick : dùng đối tượng diều kiện trỏ tới phương thức swicthOn/Of -->
+    <input type="button" value="On" onclick="dieukhien.switchOn()">    
+    <input type="button" value="Off" onclick="dieukhien.switchOff()">      
+    
+    <script>
+        class FlashLamp
+        {
+            constructor(_status)
+            {
+                this.status =_status;
+            }
+            turnOn(){
+                this.status == true;
+                // thao tác đổi đường dẫn ảnh qua name = " flashlamp"
+                document.flashlamp.src = 'https://thatgia.com/uploads/2016/01/giam-thieu-toi-da-khi-mua-hang-nhai-tivi-lcd.jpg';
+            }
+            turnOff(){
+                this.status == false;
+                document.flashlamp.src = 'vt-1.jpg';
+            }
+        }
+
+        class Controllerr  
+        {   
+            // khởi tạo điều khiển có 1 trạng thái và đèn được truyền vào
+            constructor(_status,_lamp){
+                this.status = _status;
+                this.lamp=_lamp;
+            }
+            switchOn(){
+                this.status == true;
+                // trỏ tới phương thức turnOn() của đối tượng lamp;
+                this.lamp.turnOn();
+            }
+            switchOff(){
+                this.status == false;
+                this.lamp.turnOff();
+            }
+        }
+ 
+        let bongden = new FlashLamp(true);
+        // truyền bóng đèn vào điều khiển ..
+        let dieukhien = new Controllerr(false,bongden);
+    </script>
+</body>
+</html>

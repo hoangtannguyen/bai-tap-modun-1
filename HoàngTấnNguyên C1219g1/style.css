@@ -1,0 +1,19 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+
+table{
+    border: 1px solid pink;
+    color: navy;
+}
+#Studen{
+    border: 5px double goldenrod;
+    color: greenyellow;
+}
+.tb{
+    border: 1px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img name= "flashlamp" src="https://cdn.tgdd.vn/Files/2016/06/27/847848/nhung-duoi-file-hinh-anh-pho-bien-dan-may-doc-duoc-1.jpg"  alt="" style="width: 300px ; height:200px ;" >
+    <input type="button" value="On" onclick="dieukhien.switchOn()">
+    <input type="button" value="Off" onclick="dieukhien.switchOff()">
+    
+    <script>
+        class Flashlamp{
+            constructor(_status){
+                this.status = _status;
+
+            }
+        turnOn(){
+            this.status === true;
+            document.flashlamp.src= "download1.jpg"
+        }    
+        turnOff(){
+            this.status === false;
+            document.flashlamp.src= "https://cdn.tgdd.vn/Files/2016/06/27/847848/nhung-duoi-file-hinh-anh-pho-bien-dan-may-doc-duoc-1.jpg"
+        }
+}         
+        class control{
+            constructor(_status,_lamp){
+                this.status = _status;
+                this.lamp = _lamp;
+
+            }
+            switchOn(){
+                this.status === true;
+                this.lamp.turnOn()
+
+            }    
+            switchOff(){
+                this.status === true;
+                this.lamp.turnOff()
+
+            }    
+
+
+        }
+        let bongden = new Flashlamp(true);
+        let dieukhien = new control(false,bongden);
+
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    
+
+
+
+    
+
+
+
+
+    
+    
+    
+    
+    
+   
+
+</body>
+</html>

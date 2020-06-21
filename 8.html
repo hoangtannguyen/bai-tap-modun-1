@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Chuyển độ C Sang F :
+    <br>
+    
+    <p><input type="text" placeholder="Nhập độ C" id="1"></p>
+    <input type="button" value="Độ F là " onclick="go()">
+    <div id="2"></div>
+    <script>
+        function go(){
+            let C = document.getElementById("1").value;
+            let F = C  *  9/5 + 32  ;
+            document.getElementById("2").innerHTML=F;
+            
+
+
+
+
+
+
+        }
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

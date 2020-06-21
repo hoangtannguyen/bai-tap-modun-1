@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Chuyển từ m  sang ft: 
+    <br><br>
+    <input type="text" placeholder="Nhập m" id="1">
+    <br><br>
+    <input type="button" value="ft là" onclick="go()">
+    <div id="2"></div>
+    <script>
+        function go(){
+            let m = document.getElementById("1").value;
+            let ft = m * 3.2808 ;
+            document.getElementById("2").innerHTML=ft;
+
+
+
+
+        }
+    
+    
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>

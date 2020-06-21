@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td,tr {
+            border: 1px solid black;
+           
+        }
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    Input Row <br>
+    <input type="number" id="rowNum" /><br>
+    Input Col <br>
+    <input type="number" id="colNum" /><br>
+    <input type="button" onclick="main()" value="Matrix">
+   
+    
+    <div id="soboi10"></div>
+    <div id="showMatrix"></div>
+    <div id="soboi5"></div>
+    <div id="solonnhat"></div>
+    <div id="sonhonhat"></div>
+    <div id="duongbien"></div>
+    <div id="tong"></div>
+    <div id="tongcot"></div>
+    <div id="nguyento"></div>
+    <script>
+        function parenst(num){
+             num = parseInt();
+            return !isNaN(num) && Number.isInteger(num) && num >= 10 && num <= 15;
+        }
+        function taoMaxtris(row,col){
+            let maxtrix = new Array(row);
+            for(let i = 0; i < row ; i++){
+                let arr = new Array(col);
+                for(let j = 0 ; j < col ; j++){
+                    arr[j] = Math.floor(Math.random() * 41 + 10)
+                }
+                maxtrix[i] = arr;
+            }
+            return maxtrix;
+        }
+        function showMaxtris(row,col,matrix){
+           let str = "<table>";
+            for(let i = 0; i < row ; i++){
+                str = str + "<tr>";
+                for(let j = 0 ; j < col ; j++){
+                 str = str + "<td>" + matrix[i][j] + "</td>";
+                }
+               str = str + "</tr>";
+            }
+           str += "</table>";
+           return str;
+        }
+        function soboi5(row,col,arr){
+            let dem = 0 ;
+            for(let i = 0 ; i < row ; i++){
+                for(let j = 0 ; j < col ; j++){
+                    if(arr[i][j]% 5 ===0){
+                        dem++;
+                    }
+                }
+            }
+            return dem;
+
+        }
+        function maxvt(row,col,arr){
+            let max = arr[0][0];
+            let indexi = 0;
+            let indexj = 0;
+            for(let i = 0 ; i < row ; i++){
+                for(let j = 0 ; j < col ; j++){
+                    if(arr[i][j] > max){
+                        max = arr[i][j];
+                        indexi = i;
+                        indexj = j;
+                    }
+                }
+            }
+            return "so lon nhat : " + max + " " + "vi tri :" + indexi + " - " + indexj
+        }
+
+        function minvt(row,col,arr){
+            let min = arr[0][0]
+            let indexi = 0;
+            let indexj = 0;
+            for(let i = 0 ; i < row ; i++){
+                for(let j = 0 ; j < col ; j++){
+                    if (arr[i][j] < min){
+                        min = arr[i][j]
+                        indexi = i;
+                        indexj = j;
+                    }
+                }
+            }
+            return "so nho nhat : " + min + " " + "vi tri :" + indexi + " - " + indexj
+            
+        }
+    function sumMargin(arr, row, col) {
+            let sumTop = 0;
+            let sumBot = 0;
+            let sumLeft = 0;
+            let sumRight = 0;
+
+            for (let i = 0; i < col; i++) {
+                sumTop += arr[0][i];
+                sumBot += arr[row - 1][i];
+            }
+            for (let i = 0; i < row; i++) {
+                sumLeft += arr[i][0];
+                sumRight += arr[i][col - 1];
+            }
+            let sum = sumBot + sumLeft + sumTop + sumRight - arr[0][0] -arr[row-1][0] -arr[0][col-1] -arr[row-1][col-1];
+            return ("tong duong bien : " + sum);
+            // let sum = sumTop
+        }
+
+        function tong(row,col,arr){
+            let sum = 0;
+            for(let i = 0 ; i < row ; i++){
+                for(let j = 0 ; j < col ; j++){
+                    sum = sum + arr[i][j];
+                }
+            }
+            return " tong " + sum;
+        }
+        function tongcot(row,col,arr){
+            for(let i = 0 ; i < row ; i++){
+                let sum = 0;
+                for(let j = 0 ; j < col ; j++){
+                    sum = sum + arr[j][i];
+                    
+                     
+                }
+              return "tong cua cot : " + i + " " + " là : " + sum;
+            }
+              
+        }
+        function IsPrime(num) {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function TotalPrime(row, col, matrix) {
+                    let total = 0;
+                    for (let i = 1; i < row; i++) {
+                        for (let j = 1; j < col; j++) {
+                            if (IsPrime(matrix[i][j]))
+                                total = total + 1;
+                        }
+                    }
+                    return total;
+                }
+
+       
+        
+
+
+
+
+
+
+
+
+
+        // function main(){
+        //     let matrix = taoMaxtris(5,4);
+        //     document.write(showMaxtris(5,4,matrix))
+        // }
+        // main();
+        
+        function main(){
+            let row = document.getElementById("rowNum").value;
+            let col = document.getElementById("colNum").value;
+            let matrix = taoMaxtris(row,col);
+            document.getElementById("showMatrix").innerHTML=showMaxtris(row,col,matrix);
+            document.getElementById("soboi5").innerHTML="so boi cua 5 la :" + soboi5(row,col,matrix);
+            document.getElementById("solonnhat").innerHTML=maxvt(row,col,matrix);
+            document.getElementById("sonhonhat").innerHTML=minvt(row,col,matrix);
+            document.getElementById("duongbien").innerHTML=sumMargin(matrix,row,col);
+            document.getElementById("tong").innerHTML=tong(row,col,matrix);
+            document.getElementById("tongcot").innerHTML=tongcot(row,col,matrix);
+            document.getElementById("nguyento").innerHTML= "tong so nguyen to la : " + TotalPrime(row,col,matrix);
+
+        }
+        
+
+
+
+
+
+
+        
+        
+    </script>
+    
+   
+</body>
+</html>

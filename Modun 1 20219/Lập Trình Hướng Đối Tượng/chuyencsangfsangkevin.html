@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id=" 1"></div>
+    <script>
+        function doC(_C){
+            this.c = _C
+        this.chuyendocsangdof = function(){
+            return this.c *1.8+32
+        }    
+        this.chuyendocsangkevin = function(){
+            return this.c + 273.15
+        }
+        this.inramanhinh = function(){
+            document.write("do F la : " + this.chuyendocsangdof() + "<br/>");
+            document.write("do K la : " + this.chuyendocsangkevin() + "<br/>");
+
+        }
+        }
+        let doc = new doC(30)
+        doc.inramanhinh()
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

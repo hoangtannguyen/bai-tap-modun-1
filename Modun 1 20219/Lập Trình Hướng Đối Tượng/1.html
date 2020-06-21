@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age,mauda,maumat){
+            this.name = name;
+            this.age = age;
+            this.mauda = mauda;
+            this.maumat = maumat;
+            this.changeName = function (newage){
+                this.age = newage;
+            }
+            this.personsay = function(a){
+               alert (a);
+            }
+            }
+            
+            let person =  new Person("nguyên","18","vàng","đen");
+            person.changeName(55);
+            
+            person.personsay("dsfgh");
+            document.write(person.name+" " +person.age);
+            let _name='car';
+            let _value='SH';
+            person[_name]=_value;
+            console.log(person.car);
+    
+       function Person(day,month,year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            this.changeName = function(car){
+                this.day = car
+            }
+
+
+       }
+   
+
+
+    //    let person = new Person("18","3","2019");
+    //         person.changeName(55)
+    //    document.write(person.day + person.month + person.year)
+
+
+
+        // function hocsinh(name, age ,_class){
+        //     this.name = name;
+        //     this.age = age
+        //     this._class = _class
+        //     this.full = function(){
+        //         return this.name + this.age + this._class;
+
+        //     }
+        // }
+
+        // let hoangtannguyen = new hocsinh("hoangtannguye","18","lop 12");
+        // let buithithuy = new hocsinh("buithithuy","18","lop12");
+
+
+        // let hs = hoangtannguyen.full();
+        // document.write(hs + "<br/>")
+        // let hs1 = buithithuy.full();
+        // document.write(hs1 + "<br/>")
+
+
+    
+
+    
+
+
+
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
